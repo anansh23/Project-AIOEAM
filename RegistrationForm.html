@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>New Registration</title>
+    <meta name="viewport" content="width=device-width,
+      initial-scale=1.0"/>
+      
+    <style>
+      .popup {
+  display: none;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  overflow: auto;
+  }
+
+.popup-content {
+ position: relative;
+ background-color: transparent;
+ margin: 100px auto;
+ padding: 10x;
+ }
+.close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #555;
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: url("images/hotel.jpg");
+  background-size: cover;
+}
+.container{
+  width: 100%;
+  max-width: 600px;
+  background: transparent;
+  padding: 20px;
+  margin: 0 20px;
+  border-radius: 10px;
+    
+}
+
+.form-title{
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  padding-bottom: 6px;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  border-bottom: solid 1px white;
+}
+
+.main-user-info{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.user-input-box:nth-child(2n){
+  justify-content: end;
+}
+
+.user-input-box{
+  display: flex;
+  flex-wrap: wrap;
+  width: 45%;
+  padding-bottom: 10px;
+}
+
+.user-input-box label{
+  width: 80%;
+  color: white;
+  font-size: 15px;
+  font-weight: 350;
+  margin: 5px 0;
+}
+
+.user-input-box input{
+  height: 35px;
+  width: 85%;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid grey;
+  padding: 0 8px;
+}
+
+.gender-title{
+  color:white;
+  font-size: 15px;
+  font-weight: 350;
+  border-bottom: 1px solid white;
+}
+
+.gender-category{
+  margin: 10px 0;
+  font-size: 15px;
+  font-weight: 350;
+  color: white;
+}
+
+.gender-category label{
+  padding: 0 15px 0 3px;
+}
+
+.gender-category label,
+.gender-category input,
+.form-submit-btn input{
+  cursor: pointer;
+}
+
+.form-submit-btn{
+  margin-top: 30px;
+}
+
+.form-submit-btn input{
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  font-size: 15px;
+  padding: 8px;
+  border:none;
+  border-radius: 3px;
+  color: rgb(209, 209, 209);
+  background: rgba(63, 114, 76, 0.7);
+}
+
+.form-submit-btn input:hover{
+  background: rgba(56, 204, 93, 0.7);
+  color: rgb(255, 255, 255);
+}
+
+@media(max-width: 500px){
+  .container{
+      min-width: 250px;
+  }
+
+  .user-input-box{
+      margin-bottom: 10px;
+      width: 100%;
+  }
+
+  .user-input-box:nth-child(2n){
+      justify-content: space-between;
+  }
+
+  .gender-category{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+  }
+
+  .main-user-info{
+      max-height: 350px;
+      overflow: auto;
+  }
+
+  .main-user-info::-webkit-scrollbar{
+      width: 0;
+  }
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway',sans-serif;
+    text-decoration: none;
+  }
+  .wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  a{
+    position: relative;
+    display: inline-block;
+    padding: 25px 30px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #03e9f4;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: .5s;
+    overflow: hidden;
+    margin-right: 70px;
+  }
+  a:hover{
+    background-color: #0a0a0a;
+    color: #050801;
+    box-shadow: 0 0 5px #272626,
+                0 0 25px #0c0c0c,
+                0 0 50px #111111,
+                0 0 200px #181717;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+  }
+  
+    </style>
+  </head>
+  <body>
+    <h1><button onclick="openPopup()">Sign Up</button></h1>
+    
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+    <div class="wrapper">
+      <a >
+      <div class="container">
+      <h1 class="form-title"> New Registration</h1>
+      <form action="#">
+        <div class="main-user-info">
+          <div class="user-input-box">
+            <label for="fullName">Full Name</label>
+            <input type="text"
+                    id="fullName"
+                    name="fullName"
+                    placeholder="Enter Full Name"/>
+          </div>
+          <div class="user-input-box">
+            <label for="username">Username</label>
+            <input type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Enter Username"/>
+          </div>
+          <div class="user-input-box">
+            <label for="email">Email</label>
+            <input type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter Email"/>
+          </div>
+          <div class="user-input-box">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    placeholder="Enter Phone Number"/>
+          </div>
+          <div class="user-input-box">
+            <label for="password">Password</label>
+            <input type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter Password"/>
+          </div>
+          <div class="user-input-box">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    placeholder="Confirm Password"/>
+          </div>
+        </div>
+        <div class="gender-details-box">
+          <span class="gender-title">Gender</span>
+          <div class="gender-category">
+            <input type="radio" name="gender" id="male">
+            <span><label for="male">Male</label></span>
+            <input type="radio" name="gender" id="female">
+            <label for="female">Female</label>
+            <input type="radio" name="gender" id="other">
+            <label for="other">Other</label>
+          </div>
+        </div>
+        <div class="form-submit-btn">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </a>
+    </div>
+   </div>
+  </div>
+
+ 
+    <script src="registration.js"></script>
+
+
+  </body>
+</html>
